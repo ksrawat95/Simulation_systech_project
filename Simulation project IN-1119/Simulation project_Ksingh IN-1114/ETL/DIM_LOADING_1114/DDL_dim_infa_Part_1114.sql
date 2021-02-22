@@ -1,0 +1,30 @@
+--drop table dim_infa_Part
+CREATE TABLE dim_infa_part(
+	Part_key	int			Primary Key,
+	[PartId] [float]							,
+	[PartNumber] [nvarchar](255)				,
+	[PartSystem] [nvarchar](255)				,
+	[PartSubSystem] [nvarchar](255)				,
+	[SupplierCode] [float]						,
+	[Name] [nvarchar](255)						,
+	[Description] [nvarchar](255)				,
+	[PlanningLeadtime] [float]					,
+	[UnitPrice] [float]							,
+	[Orderpoint] [float]						,
+	[SafetyStockQuantity] [float]				,
+	[FabricatedFlag] [nvarchar](255)			,
+	[PurchasedFlag] [nvarchar](255)				,
+	[StockedFlag] [nvarchar](255)				,
+	[InspectionRequiredFlag] [nvarchar](255)	,
+	[HazardousMaterialFlag] [nvarchar](255)		,
+	[Version] [nvarchar](255)					,
+	[ENABLED] [nvarchar](255)					,
+	History1 [nvarchar](255)					,
+	History2 [nvarchar](255)					,
+	DW_CREATED_DATE	date						DEFAULT getdate(),
+	DW_CREATED_BY	varchar(200)				Default suser_sname(),
+	DW_UPDATED_DATE	date						DEFAULT getdate(),
+	DW_UPDATED_BY	varchar(200)				Default suser_sname(),
+)
+
+

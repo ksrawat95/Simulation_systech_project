@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE POWERMART SYSTEM "powrmart.dtd">
+<POWERMART CREATION_DATE="11/14/2019 07:47:01" REPOSITORY_VERSION="187.96">
+<REPOSITORY NAME="Powercenter_Repo_Service" VERSION="187" CODEPAGE="UTF-8" DATABASETYPE="Microsoft SQL Server">
+<FOLDER NAME="Tgt_Oct19_TMohan" GROUP="" OWNER="TMohan" SHARED="NOTSHARED" DESCRIPTION="" PERMISSIONS="rwx---r--" UUID="0cb265e7-c768-4d93-91f4-72f1babd5241">
+    <SOURCE BUSINESSNAME ="" DATABASETYPE ="Microsoft SQL Server" DBDNAME ="source_simulation_tralli_tmohan" DESCRIPTION ="" NAME ="OrderJobServiceCorrectionPart" OBJECTVERSION ="1" OWNERNAME ="dbo" VERSIONNUMBER ="1">
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="1" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="11" LEVEL ="0" NAME ="OrderJobPartId" NULLABLE ="NULL" OCCURS ="0" OFFSET ="0" PHYSICALLENGTH ="10" PHYSICALOFFSET ="0" PICTURETEXT ="" PRECISION ="10" SCALE ="0" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="2" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="11" LEVEL ="0" NAME ="OrderJobServiceCorrectionId" NULLABLE ="NULL" OCCURS ="0" OFFSET ="11" PHYSICALLENGTH ="10" PHYSICALOFFSET ="10" PICTURETEXT ="" PRECISION ="10" SCALE ="0" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="varchar" DESCRIPTION ="" FIELDNUMBER ="3" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="0" LEVEL ="0" NAME ="Partnumber" NULLABLE ="NULL" OCCURS ="0" OFFSET ="22" PHYSICALLENGTH ="25" PHYSICALOFFSET ="20" PICTURETEXT ="" PRECISION ="25" SCALE ="0" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="4" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="20" LEVEL ="0" NAME ="Quantity" NULLABLE ="NULL" OCCURS ="0" OFFSET ="22" PHYSICALLENGTH ="18" PHYSICALOFFSET ="45" PICTURETEXT ="" PRECISION ="18" SCALE ="4" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="5" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="20" LEVEL ="0" NAME ="Unitprice" NULLABLE ="NULL" OCCURS ="0" OFFSET ="42" PHYSICALLENGTH ="18" PHYSICALOFFSET ="63" PICTURETEXT ="" PRECISION ="18" SCALE ="4" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="bit" DESCRIPTION ="" FIELDNUMBER ="6" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="1" LEVEL ="0" NAME ="Enabled" NULLABLE ="NULL" OCCURS ="0" OFFSET ="62" PHYSICALLENGTH ="1" PHYSICALOFFSET ="81" PICTURETEXT ="" PRECISION ="1" SCALE ="0" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="7" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="20" LEVEL ="0" NAME ="Partcost" NULLABLE ="NULL" OCCURS ="0" OFFSET ="63" PHYSICALLENGTH ="18" PHYSICALOFFSET ="82" PICTURETEXT ="" PRECISION ="18" SCALE ="4" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="bit" DESCRIPTION ="" FIELDNUMBER ="8" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="1" LEVEL ="0" NAME ="IsCustomPart" NULLABLE ="NULL" OCCURS ="0" OFFSET ="83" PHYSICALLENGTH ="1" PHYSICALOFFSET ="100" PICTURETEXT ="" PRECISION ="1" SCALE ="0" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="9" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="20" LEVEL ="0" NAME ="InventoryQuantityConsumed" NULLABLE ="NULL" OCCURS ="0" OFFSET ="84" PHYSICALLENGTH ="18" PHYSICALOFFSET ="101" PICTURETEXT ="" PRECISION ="18" SCALE ="4" USAGE_FLAGS =""/>
+        <SOURCEFIELD BUSINESSNAME ="" DATATYPE ="bit" DESCRIPTION ="" FIELDNUMBER ="10" FIELDPROPERTY ="0" FIELDTYPE ="ELEMITEM" HIDDEN ="NO" KEYTYPE ="NOT A KEY" LENGTH ="1" LEVEL ="0" NAME ="IsInventoryConsumed" NULLABLE ="NULL" OCCURS ="0" OFFSET ="104" PHYSICALLENGTH ="1" PHYSICALOFFSET ="119" PICTURETEXT ="" PRECISION ="1" SCALE ="0" USAGE_FLAGS =""/>
+    </SOURCE>
+    <TARGET BUSINESSNAME ="" CONSTRAINT ="" DATABASETYPE ="Microsoft SQL Server" DESCRIPTION ="" NAME ="fact_infa_orderjobservicecorrectionpart" OBJECTVERSION ="1" TABLEOPTIONS ="" VERSIONNUMBER ="1">
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="1" KEYTYPE ="PRIMARY KEY" NAME ="orderjobpart_key" NULLABLE ="NOTNULL" PICTURETEXT ="" PRECISION ="10" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="2" KEYTYPE ="NOT A KEY" NAME ="orderjobpartid" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="10" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="3" KEYTYPE ="NOT A KEY" NAME ="orderjobservicecorrection_key" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="10" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="int" DESCRIPTION ="" FIELDNUMBER ="4" KEYTYPE ="NOT A KEY" NAME ="part_key" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="10" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="5" KEYTYPE ="NOT A KEY" NAME ="quantity" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="18" SCALE ="4"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="6" KEYTYPE ="NOT A KEY" NAME ="unitprice" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="18" SCALE ="2"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="char" DESCRIPTION ="" FIELDNUMBER ="7" KEYTYPE ="NOT A KEY" NAME ="enabled" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="5" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="8" KEYTYPE ="NOT A KEY" NAME ="partcost" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="18" SCALE ="2"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="char" DESCRIPTION ="" FIELDNUMBER ="9" KEYTYPE ="NOT A KEY" NAME ="iscustompart" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="5" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="decimal" DESCRIPTION ="" FIELDNUMBER ="10" KEYTYPE ="NOT A KEY" NAME ="inventoryquantityconsumed" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="18" SCALE ="4"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="char" DESCRIPTION ="" FIELDNUMBER ="11" KEYTYPE ="NOT A KEY" NAME ="isinventoryconsumed" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="5" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="datetime" DESCRIPTION ="" FIELDNUMBER ="12" KEYTYPE ="NOT A KEY" NAME ="DW_CREATED_DATE" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="23" SCALE ="3"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="nvarchar" DESCRIPTION ="" FIELDNUMBER ="13" KEYTYPE ="NOT A KEY" NAME ="DW_CREATED_BY" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="255" SCALE ="0"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="datetime" DESCRIPTION ="" FIELDNUMBER ="14" KEYTYPE ="NOT A KEY" NAME ="DW_UPDATED_DATE" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="23" SCALE ="3"/>
+        <TARGETFIELD BUSINESSNAME ="" DATATYPE ="nvarchar" DESCRIPTION ="" FIELDNUMBER ="15" KEYTYPE ="NOT A KEY" NAME ="DW_UPDATED_BY" NULLABLE ="NULL" PICTURETEXT ="" PRECISION ="255" SCALE ="0"/>
+    </TARGET>
+    <MAPPING DESCRIPTION ="" ISVALID ="YES" NAME ="m_fact_infa_orderjobservicecorrectionpart" OBJECTVERSION ="1" VERSIONNUMBER ="1">
+        <TRANSFORMATION DESCRIPTION ="" NAME ="SQ_OrderJobServiceCorrectionPart" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Source Qualifier" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="OrderJobPartId" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="OrderJobServiceCorrectionId" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="Partnumber" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="25" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="Quantity" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="Unitprice" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="Enabled" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="Partcost" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="IsCustomPart" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="InventoryQuantityConsumed" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="IsInventoryConsumed" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Sql Query" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="User Defined Join" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Source Filter" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Number Of Sorted Ports" VALUE ="0"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+            <TABLEATTRIBUTE NAME ="Select Distinct" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Is Partitionable" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Pre SQL" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Post SQL" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Output is deterministic" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Output is repeatable" VALUE ="Never"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="EXP_Null_handling" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Expression" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="OrderJobPartId" EXPRESSIONTYPE ="GENERAL" NAME ="OrderJobPartId" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="OrderJobServiceCorrectionId" EXPRESSIONTYPE ="GENERAL" NAME ="OrderJobServiceCorrectionId" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION =":LKP.LKP_FACT_ORDERJOSERVICECORRECTION(OrderJobServiceCorrectionId)" EXPRESSIONTYPE ="GENERAL" NAME ="o_orderservicekey" PICTURETEXT ="" PORTTYPE ="LOCAL VARIABLE" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(o_orderservicekey),-1,o_orderservicekey)" EXPRESSIONTYPE ="GENERAL" NAME ="orderjobservicecorrection_key" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="Partnumber" EXPRESSIONTYPE ="GENERAL" NAME ="Partnumber" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="25" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION =":LKP.LKP_DIM_INFA_PART(Partnumber)" EXPRESSIONTYPE ="GENERAL" NAME ="o_part_key" PICTURETEXT ="" PORTTYPE ="LOCAL VARIABLE" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(o_part_key),-1,o_part_key)" EXPRESSIONTYPE ="GENERAL" NAME ="part_key" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="Quantity" EXPRESSIONTYPE ="GENERAL" NAME ="Quantity" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(Quantity),0,Quantity)" EXPRESSIONTYPE ="GENERAL" NAME ="o_quantity" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="Unitprice" EXPRESSIONTYPE ="GENERAL" NAME ="Unitprice" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(Unitprice),0,Unitprice)" EXPRESSIONTYPE ="GENERAL" NAME ="o_unitprice" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="Enabled" EXPRESSIONTYPE ="GENERAL" NAME ="Enabled" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="decode(true,&#xD;&#xA;isnull(Enabled),&apos;N&apos;,&#xD;&#xA;Enabled=&apos;0&apos;,&apos;N&apos;,&#xD;&#xA;Enabled=&apos;1&apos;,&apos;Y&apos;)" EXPRESSIONTYPE ="GENERAL" NAME ="o_enabled" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="Partcost" EXPRESSIONTYPE ="GENERAL" NAME ="Partcost" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(Partcost),0,Partcost)" EXPRESSIONTYPE ="GENERAL" NAME ="o_partcost" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="IsCustomPart" EXPRESSIONTYPE ="GENERAL" NAME ="IsCustomPart" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="decode(true,&#xD;&#xA;isnull(IsCustomPart),&apos;N&apos;,&#xD;&#xA;IsCustomPart=&apos;0&apos;,&apos;N&apos;,&#xD;&#xA;IsCustomPart=&apos;1&apos;,&apos;Y&apos;)" EXPRESSIONTYPE ="GENERAL" NAME ="o_iscustompart" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="InventoryQuantityConsumed" EXPRESSIONTYPE ="GENERAL" NAME ="InventoryQuantityConsumed" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(InventoryQuantityConsumed),0,InventoryQuantityConsumed)" EXPRESSIONTYPE ="GENERAL" NAME ="o_inventoryquantityconsumed" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION ="IsInventoryConsumed" EXPRESSIONTYPE ="GENERAL" NAME ="IsInventoryConsumed" PICTURETEXT ="" PORTTYPE ="INPUT/OUTPUT" PRECISION ="1" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="decode(true,&#xD;&#xA;isnull(IsCustomPart),&apos;N&apos;,&#xD;&#xA;IsInventoryConsumed=&apos;0&apos;,&apos;N&apos;,&#xD;&#xA;IsInventoryConsumed=&apos;1&apos;,&apos;Y&apos;)" EXPRESSIONTYPE ="GENERAL" NAME ="o_isinventoryconsumed" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" EXPRESSION =":LKP.LKP_FACT_INFA_ORDERJOBSERVICECORRECTIONPART(OrderJobPartId)" EXPRESSIONTYPE ="GENERAL" NAME ="lkp_orderservicepart_id" PICTURETEXT ="" PORTTYPE ="LOCAL VARIABLE" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="iif(isnull(lkp_orderservicepart_id),1)" EXPRESSIONTYPE ="GENERAL" NAME ="Ins_flag" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="SYSTIMESTAMP()" EXPRESSIONTYPE ="GENERAL" NAME ="Dw_created_date" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="$PMRepositoryUserName" EXPRESSIONTYPE ="GENERAL" NAME ="Dw_created_by" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="SYSTIMESTAMP()" EXPRESSIONTYPE ="GENERAL" NAME ="Dw_updated_date" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" EXPRESSION ="$PMRepositoryUserName" EXPRESSIONTYPE ="GENERAL" NAME ="Dw_updated_by" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="LKP_fact_orderjoservicecorrection" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Lookup Procedure" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="orderjobservicecorrection_key" PICTURETEXT ="" PORTTYPE ="LOOKUP/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="orderjobservicecorrectionid" PICTURETEXT ="" PORTTYPE ="LOOKUP" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="o_orderservice_id" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Lookup Sql Override" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup table name" VALUE ="fact_infa_orderjobservicecorrection"/>
+            <TABLEATTRIBUTE NAME ="Lookup Source Filter" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup caching enabled" VALUE ="YES"/>
+            <TABLEATTRIBUTE NAME ="Lookup policy on multiple match" VALUE ="Use Any Value"/>
+            <TABLEATTRIBUTE NAME ="Lookup condition" VALUE ="orderjobservicecorrectionid = o_orderservice_id"/>
+            <TABLEATTRIBUTE NAME ="Connection Information" VALUE ="$Target"/>
+            <TABLEATTRIBUTE NAME ="Source Type" VALUE ="Database"/>
+            <TABLEATTRIBUTE NAME ="Recache if Stale" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache directory name" VALUE ="$PMCacheDir"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache initialize" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache persistent" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup Data Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Lookup Index Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Dynamic Lookup Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Synchronize Dynamic Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Output Old Value On Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Dynamic Cache Condition" VALUE ="TRUE"/>
+            <TABLEATTRIBUTE NAME ="Cache File Name Prefix" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Re-cache from lookup source" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Insert Else Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Else Insert" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Datetime Format" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Thousand Separator" VALUE ="None"/>
+            <TABLEATTRIBUTE NAME ="Decimal Separator" VALUE ="."/>
+            <TABLEATTRIBUTE NAME ="Case Sensitive String Comparison" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Null ordering" VALUE ="Null Is Highest Value"/>
+            <TABLEATTRIBUTE NAME ="Sorted Input" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup source is static" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Pre-build lookup cache" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Subsecond Precision" VALUE ="6"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="LKP_dim_infa_part" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Lookup Procedure" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="part_key" PICTURETEXT ="" PORTTYPE ="LOOKUP/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="partnumber" PICTURETEXT ="" PORTTYPE ="LOOKUP" PRECISION ="255" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="o_partnumber" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="255" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Lookup Sql Override" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup table name" VALUE ="dim_infa_part"/>
+            <TABLEATTRIBUTE NAME ="Lookup Source Filter" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup caching enabled" VALUE ="YES"/>
+            <TABLEATTRIBUTE NAME ="Lookup policy on multiple match" VALUE ="Use Any Value"/>
+            <TABLEATTRIBUTE NAME ="Lookup condition" VALUE ="partnumber = o_partnumber"/>
+            <TABLEATTRIBUTE NAME ="Connection Information" VALUE ="$Target"/>
+            <TABLEATTRIBUTE NAME ="Source Type" VALUE ="Database"/>
+            <TABLEATTRIBUTE NAME ="Recache if Stale" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache directory name" VALUE ="$PMCacheDir"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache initialize" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache persistent" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup Data Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Lookup Index Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Dynamic Lookup Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Synchronize Dynamic Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Output Old Value On Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Dynamic Cache Condition" VALUE ="TRUE"/>
+            <TABLEATTRIBUTE NAME ="Cache File Name Prefix" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Re-cache from lookup source" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Insert Else Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Else Insert" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Datetime Format" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Thousand Separator" VALUE ="None"/>
+            <TABLEATTRIBUTE NAME ="Decimal Separator" VALUE ="."/>
+            <TABLEATTRIBUTE NAME ="Case Sensitive String Comparison" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Null ordering" VALUE ="Null Is Highest Value"/>
+            <TABLEATTRIBUTE NAME ="Sorted Input" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup source is static" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Pre-build lookup cache" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Subsecond Precision" VALUE ="6"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="LKP_fact_infa_orderjobservicecorrectionpart" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Lookup Procedure" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="orderjobpartid" PICTURETEXT ="" PORTTYPE ="LOOKUP/OUTPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" NAME ="o_orderjobpartid" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Lookup Sql Override" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup table name" VALUE ="fact_infa_orderjobservicecorrectionpart"/>
+            <TABLEATTRIBUTE NAME ="Lookup Source Filter" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Lookup caching enabled" VALUE ="YES"/>
+            <TABLEATTRIBUTE NAME ="Lookup policy on multiple match" VALUE ="Use Any Value"/>
+            <TABLEATTRIBUTE NAME ="Lookup condition" VALUE ="orderjobpartid = o_orderjobpartid"/>
+            <TABLEATTRIBUTE NAME ="Connection Information" VALUE ="$Target"/>
+            <TABLEATTRIBUTE NAME ="Source Type" VALUE ="Database"/>
+            <TABLEATTRIBUTE NAME ="Recache if Stale" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache directory name" VALUE ="$PMCacheDir"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache initialize" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup cache persistent" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup Data Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Lookup Index Cache Size" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Dynamic Lookup Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Synchronize Dynamic Cache" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Output Old Value On Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Dynamic Cache Condition" VALUE ="TRUE"/>
+            <TABLEATTRIBUTE NAME ="Cache File Name Prefix" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Re-cache from lookup source" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Insert Else Update" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Update Else Insert" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Datetime Format" VALUE =""/>
+            <TABLEATTRIBUTE NAME ="Thousand Separator" VALUE ="None"/>
+            <TABLEATTRIBUTE NAME ="Decimal Separator" VALUE ="."/>
+            <TABLEATTRIBUTE NAME ="Case Sensitive String Comparison" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Null ordering" VALUE ="Null Is Highest Value"/>
+            <TABLEATTRIBUTE NAME ="Sorted Input" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Lookup source is static" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Pre-build lookup cache" VALUE ="Auto"/>
+            <TABLEATTRIBUTE NAME ="Subsecond Precision" VALUE ="6"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="RTR_Insert" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Router" VERSIONNUMBER ="1">
+            <GROUP DESCRIPTION ="" NAME ="INPUT" ORDER ="1" TYPE ="INPUT"/>
+            <GROUP DESCRIPTION ="" EXPRESSION ="Ins_flag=1" NAME ="Insert" ORDER ="2" TYPE ="OUTPUT"/>
+            <GROUP DESCRIPTION ="Path for the data when none of the group conditions are satisfied." NAME ="DEFAULT1" ORDER ="3" TYPE ="OUTPUT/DEFAULT"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="OrderJobPartId" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="orderjobservicecorrection_key" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="part_key" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_quantity" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_unitprice" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="18" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_enabled" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_partcost" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="18" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_iscustompart" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_inventoryquantityconsumed" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="18" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="o_isinventoryconsumed" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="Ins_flag" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="10" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="Dw_created_date" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="29" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="Dw_created_by" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="50" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="Dw_updated_date" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="29" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="INPUT" NAME ="Dw_updated_by" PICTURETEXT ="" PORTTYPE ="INPUT" PRECISION ="50" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="OrderJobPartId1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="OrderJobPartId" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="orderjobservicecorrection_key1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="orderjobservicecorrection_key" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="part_key1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="part_key" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_quantity1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_quantity" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_unitprice1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_unitprice" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_enabled1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_enabled" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_partcost1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_partcost" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_iscustompart1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_iscustompart" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_inventoryquantityconsumed1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_inventoryquantityconsumed" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="o_isinventoryconsumed1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_isinventoryconsumed" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="Ins_flag1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="Ins_flag" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="Dw_created_date1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" REF_FIELD ="Dw_created_date" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="Dw_created_by1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" REF_FIELD ="Dw_created_by" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="Dw_updated_date1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" REF_FIELD ="Dw_updated_date" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="Insert" NAME ="Dw_updated_by1" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" REF_FIELD ="Dw_updated_by" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="OrderJobPartId2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="OrderJobPartId" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="orderjobservicecorrection_key2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="orderjobservicecorrection_key" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="part_key2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="part_key" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_quantity2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_quantity" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_unitprice2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_unitprice" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_enabled2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_enabled" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_partcost2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_partcost" SCALE ="2"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_iscustompart2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_iscustompart" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="decimal" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_inventoryquantityconsumed2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="18" REF_FIELD ="o_inventoryquantityconsumed" SCALE ="4"/>
+            <TRANSFORMFIELD DATATYPE ="string" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="o_isinventoryconsumed2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="o_isinventoryconsumed" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="integer" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="Ins_flag2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="10" REF_FIELD ="Ins_flag" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="Dw_created_date2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" REF_FIELD ="Dw_created_date" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="Dw_created_by2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" REF_FIELD ="Dw_created_by" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="date/time" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="Dw_updated_date2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="29" REF_FIELD ="Dw_updated_date" SCALE ="9"/>
+            <TRANSFORMFIELD DATATYPE ="nstring" DEFAULTVALUE ="" DESCRIPTION ="" GROUP ="DEFAULT1" NAME ="Dw_updated_by2" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="50" REF_FIELD ="Dw_updated_by" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+        </TRANSFORMATION>
+        <TRANSFORMATION DESCRIPTION ="" NAME ="SEQ_orderpart_key" OBJECTVERSION ="1" REUSABLE ="NO" TYPE ="Sequence" VERSIONNUMBER ="1">
+            <TRANSFORMFIELD DATATYPE ="bigint" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" NAME ="NEXTVAL" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="19" SCALE ="0"/>
+            <TRANSFORMFIELD DATATYPE ="bigint" DEFAULTVALUE ="ERROR(&apos;transformation error&apos;)" DESCRIPTION ="" NAME ="CURRVAL" PICTURETEXT ="" PORTTYPE ="OUTPUT" PRECISION ="19" SCALE ="0"/>
+            <TABLEATTRIBUTE NAME ="Start Value" VALUE ="0"/>
+            <TABLEATTRIBUTE NAME ="Increment By" VALUE ="1"/>
+            <TABLEATTRIBUTE NAME ="End Value" VALUE ="9223372036854775807"/>
+            <TABLEATTRIBUTE NAME ="Current Value" VALUE ="1"/>
+            <TABLEATTRIBUTE NAME ="Cycle" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Number of Cached Values" VALUE ="0"/>
+            <TABLEATTRIBUTE NAME ="Reset" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Is Current Value Shared" VALUE ="NO"/>
+            <TABLEATTRIBUTE NAME ="Tracing Level" VALUE ="Normal"/>
+        </TRANSFORMATION>
+        <INSTANCE DBDNAME ="source_simulation_tralli_tmohan" DESCRIPTION ="" NAME ="OrderJobServiceCorrectionPart" TRANSFORMATION_NAME ="OrderJobServiceCorrectionPart" TRANSFORMATION_TYPE ="Source Definition" TYPE ="SOURCE"/>
+        <INSTANCE DESCRIPTION ="" NAME ="SQ_OrderJobServiceCorrectionPart" REUSABLE ="NO" TRANSFORMATION_NAME ="SQ_OrderJobServiceCorrectionPart" TRANSFORMATION_TYPE ="Source Qualifier" TYPE ="TRANSFORMATION">
+            <ASSOCIATED_SOURCE_INSTANCE NAME ="OrderJobServiceCorrectionPart"/>
+        </INSTANCE>
+        <INSTANCE DESCRIPTION ="" NAME ="EXP_Null_handling" REUSABLE ="NO" TRANSFORMATION_NAME ="EXP_Null_handling" TRANSFORMATION_TYPE ="Expression" TYPE ="TRANSFORMATION"/>
+        <INSTANCE DESCRIPTION ="" NAME ="LKP_fact_orderjoservicecorrection" REUSABLE ="NO" TRANSFORMATION_NAME ="LKP_fact_orderjoservicecorrection" TRANSFORMATION_TYPE ="Lookup Procedure" TYPE ="TRANSFORMATION"/>
+        <INSTANCE DESCRIPTION ="" NAME ="LKP_dim_infa_part" REUSABLE ="NO" TRANSFORMATION_NAME ="LKP_dim_infa_part" TRANSFORMATION_TYPE ="Lookup Procedure" TYPE ="TRANSFORMATION"/>
+        <INSTANCE DESCRIPTION ="" NAME ="LKP_fact_infa_orderjobservicecorrectionpart" REUSABLE ="NO" TRANSFORMATION_NAME ="LKP_fact_infa_orderjobservicecorrectionpart" TRANSFORMATION_TYPE ="Lookup Procedure" TYPE ="TRANSFORMATION"/>
+        <INSTANCE DESCRIPTION ="" NAME ="fact_infa_orderjobservicecorrectionpart" TRANSFORMATION_NAME ="fact_infa_orderjobservicecorrectionpart" TRANSFORMATION_TYPE ="Target Definition" TYPE ="TARGET"/>
+        <INSTANCE DESCRIPTION ="" NAME ="RTR_Insert" REUSABLE ="NO" TRANSFORMATION_NAME ="RTR_Insert" TRANSFORMATION_TYPE ="Router" TYPE ="TRANSFORMATION"/>
+        <INSTANCE DESCRIPTION ="" NAME ="SEQ_orderpart_key" REUSABLE ="NO" TRANSFORMATION_NAME ="SEQ_orderpart_key" TRANSFORMATION_TYPE ="Sequence" TYPE ="TRANSFORMATION"/>
+        <CONNECTOR FROMFIELD ="OrderJobPartId" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="OrderJobPartId" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="OrderJobServiceCorrectionId" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="OrderJobServiceCorrectionId" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="Partnumber" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="Partnumber" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="Quantity" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="Quantity" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="Unitprice" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="Unitprice" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="Enabled" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="Enabled" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="Partcost" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="Partcost" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="IsCustomPart" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="IsCustomPart" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="InventoryQuantityConsumed" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="InventoryQuantityConsumed" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="IsInventoryConsumed" FROMINSTANCE ="OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Definition" TOFIELD ="IsInventoryConsumed" TOINSTANCE ="SQ_OrderJobServiceCorrectionPart" TOINSTANCETYPE ="Source Qualifier"/>
+        <CONNECTOR FROMFIELD ="OrderJobPartId" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="OrderJobPartId" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="OrderJobServiceCorrectionId" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="OrderJobServiceCorrectionId" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="Partnumber" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="Partnumber" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="Quantity" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="Quantity" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="Unitprice" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="Unitprice" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="Enabled" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="Enabled" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="Partcost" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="Partcost" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="IsCustomPart" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="IsCustomPart" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="InventoryQuantityConsumed" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="InventoryQuantityConsumed" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="IsInventoryConsumed" FROMINSTANCE ="SQ_OrderJobServiceCorrectionPart" FROMINSTANCETYPE ="Source Qualifier" TOFIELD ="IsInventoryConsumed" TOINSTANCE ="EXP_Null_handling" TOINSTANCETYPE ="Expression"/>
+        <CONNECTOR FROMFIELD ="OrderJobPartId" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="OrderJobPartId" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="orderjobservicecorrection_key" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="orderjobservicecorrection_key" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="part_key" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="part_key" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_quantity" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_quantity" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_unitprice" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_unitprice" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_enabled" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_enabled" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_partcost" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_partcost" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_iscustompart" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_iscustompart" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_inventoryquantityconsumed" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_inventoryquantityconsumed" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="o_isinventoryconsumed" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="o_isinventoryconsumed" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="Ins_flag" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="Ins_flag" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="Dw_created_date" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="Dw_created_date" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="Dw_created_by" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="Dw_created_by" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="Dw_updated_date" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="Dw_updated_date" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="Dw_updated_by" FROMINSTANCE ="EXP_Null_handling" FROMINSTANCETYPE ="Expression" TOFIELD ="Dw_updated_by" TOINSTANCE ="RTR_Insert" TOINSTANCETYPE ="Router"/>
+        <CONNECTOR FROMFIELD ="OrderJobPartId1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="orderjobpartid" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="orderjobservicecorrection_key1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="orderjobservicecorrection_key" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="part_key1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="part_key" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_quantity1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="quantity" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_unitprice1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="unitprice" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_enabled1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="enabled" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_partcost1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="partcost" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_iscustompart1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="iscustompart" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_inventoryquantityconsumed1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="inventoryquantityconsumed" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="o_isinventoryconsumed1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="isinventoryconsumed" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="Dw_created_date1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="DW_CREATED_DATE" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="Dw_created_by1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="DW_CREATED_BY" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="Dw_updated_date1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="DW_UPDATED_DATE" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="Dw_updated_by1" FROMINSTANCE ="RTR_Insert" FROMINSTANCETYPE ="Router" TOFIELD ="DW_UPDATED_BY" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <CONNECTOR FROMFIELD ="NEXTVAL" FROMINSTANCE ="SEQ_orderpart_key" FROMINSTANCETYPE ="Sequence" TOFIELD ="orderjobpart_key" TOINSTANCE ="fact_infa_orderjobservicecorrectionpart" TOINSTANCETYPE ="Target Definition"/>
+        <TARGETLOADORDER ORDER ="1" TARGETINSTANCE ="fact_infa_orderjobservicecorrectionpart"/>
+    </MAPPING>
+</FOLDER>
+</REPOSITORY>
+</POWERMART>
